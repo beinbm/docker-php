@@ -57,5 +57,5 @@ RUN ln -s /etc/php/zzz-settings.ini /etc/php/7.2/cli/conf.d/zzz-settings.ini
 RUN echo "\nxdebug.remote_enable=on\nxdebug.remote_autostart=on" >> /etc/php/7.2/mods-available/xdebug.ini
 
 EXPOSE 80
-WORKDIR /var/www
+WORKDIR /var/www/html
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
