@@ -2,7 +2,7 @@ FROM debian:buster-slim
 MAINTAINER Marco Beinbrech <marco@beinbrech.com>
 
 ### INSTALL APACHE & PHP
-RUN applications="apache2 libapache2-mod-php7.2 php7.2 curl gnupg unzip" \
+RUN applications="apache2 libapache2-mod-php7.2 php7.2 curl gnupg unzip wget" \
     && phpModules="php7.2-mysql php7.2-sqlite3 php7.2-intl php7.2-bcmath php7.2-curl php7.2-gmp php7.2-mbstring php7.2-xml php-xdebug" \
     && apt-get update \
     && apt-get install -y $applications $phpModules \
