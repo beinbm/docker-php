@@ -2,10 +2,23 @@ FROM debian:stretch-slim
 MAINTAINER Marco Beinbrech <marco@beinbrech.com>
 
 ### INSTALL APACHE & PHP
-RUN applications="apache2 libapache2-mod-php7.0 php7.0 curl gnupg unzip" \
-    && phpModules="php7.0-mysql php7.0-sqlite3 php7.0-mcrypt php7.0-intl php7.0-bcmath php7.0-curl php7.0-gmp php7.0-mbstring php7.0-xml php-xdebug php7.0-sqlite3" \
-    && apt-get update \
-    && apt-get install -y $applications $phpModules \
+RUN apt-get update && apt-get install -y \
+        apache2 \
+        curl \
+        gnupg \
+        libapache2-mod-php7.0 \
+        php7.0 \
+        php7.0-bcmath \
+        php7.0-curl \
+        php7.0-gmp \
+        php7.0-gd \
+        php7.0-intl \
+        php7.0-mysql \
+        php7.0-mbstring \
+        php7.0-sqlite3 \
+        php7.0-xml \
+        php-xdebug \
+        unzip" \
     && rm -rf /var/lib/apt/lists/*
 
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && ln -sf /dev/stderr /var/log/apache2/error.log
