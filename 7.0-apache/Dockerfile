@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
         php7.0-sqlite3 \
         php7.0-xml \
         php-xdebug \
-        unzip" \
+        unzip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && ln -sf /dev/stderr /var/log/apache2/error.log
